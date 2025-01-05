@@ -32,9 +32,12 @@ def load_model(model_name):
     response.raise_for_status()
     model = pickle.loads(response.content)
     return model
+   except Exception as e:
+        st.error(f"Error loading the model: {e}")
+        return None
 
 if selected == "Parkinsons Prediction":
-    Parkinsons = load_model("Parkinsons")
+    model = load_model("Parkinsons")
 
     # page title
     st.title("Parkinson's Disease Prediction using ML")
@@ -130,7 +133,7 @@ if selected == "Parkinsons Prediction":
   
 elif selected == "Liver Disease Prediction":
 
-    Liver_disease = load_model("Liver_disease")
+    model = load_model("Liver_disease")
     st.title("Liver Disease Prediction using ML")
     col1, col2, col3, col4 = st.columns(4)
 
@@ -173,7 +176,7 @@ elif selected == "Liver Disease Prediction":
     st.success(Liver_diagnosis)
 
 elif selected == "Kidney Disease Prediction":
-    Kidney_disease = load_model("Kidney_disease")
+    model = load_model("Kidney_disease")
 
     st.title("Kidney Disease Prediction using ML")
     
