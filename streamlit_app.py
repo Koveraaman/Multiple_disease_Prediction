@@ -22,10 +22,11 @@ with st.sidebar:
 # Load the model from GitHub
 # Load the model from GitHub
 MODEL_URLS = {
-    "Parkinsons":"https://raw.githubusercontent.com/Koveraaman/Multiple_disease_Prediction/main/parkinsons_model.pkl",
-    "Liver_disease": "https://github.com/Koveraaman/Multiple_disease_Prediction/raw/main/liver_model.pkl",   
-    "Kidney_disease": "https://github.com/Koveraaman/Multiple_disease_Prediction/raw/main/kidney_model.pkl"  
+    "Parkinsons": "https://raw.githubusercontent.com/Koveraaman/Multiple_disease_Prediction/main/parkinsons_model.pkl",
+    "Liver_disease": "https://raw.githubusercontent.com/Koveraaman/Multiple_disease_Prediction/main/liver_model.pkl",
+    "Kidney_disease": "https://raw.githubusercontent.com/Koveraaman/Multiple_disease_Prediction/main/kidney_model.pkl",
 }
+
 @st.cache_resource
 def load_model(model_name):
     response = requests.get(MODEL_URLS[model_name]) # Accessing a specific model URL
