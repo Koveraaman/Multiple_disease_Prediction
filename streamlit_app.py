@@ -3,6 +3,7 @@ import pandas as pd
 import pickle
 import requests
 from streamlit_option_menu import option_menu
+
 st.set_page_config(page_title="Health Assistant",
                    layout="wide",
                    page_icon="🧑‍⚕️")
