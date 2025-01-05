@@ -32,9 +32,6 @@ def load_model(model_name):
     response.raise_for_status()
     model = pickle.loads(response.content)
     return model
-   except Exception as e:
-        st.error(f"Error loading the model: {e}")
-        return None
 
 if selected == "Parkinsons Prediction":
     model = load_model("Parkinsons")
